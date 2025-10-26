@@ -1,0 +1,151 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        'space': ['Space Grotesk', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'manrope': ['Manrope', 'sans-serif'],
+      },
+      colors: {
+        coral: {
+          50: '#FEF2F2',
+          100: '#FEE2E2',
+          200: '#FECACA',
+          300: '#FCA5A5',
+          400: '#F87171',
+          500: '#FF6B6B',
+          600: '#DC2626',
+          700: '#B91C1C',
+          800: '#991B1B',
+          900: '#7F1D1D',
+        },
+        terracotta: {
+          400: '#E17055',
+          500: '#D4490A',
+          600: '#B8471F',
+        },
+        pink: {
+          50: '#FDF2F8',
+          100: '#FCE7F3',
+          200: '#FBCFE8',
+          300: '#F9A8D4',
+          400: '#FF8A95',
+          500: '#EC4899',
+          600: '#DB2777',
+          700: '#BE185D',
+          800: '#9D174D',
+          900: '#831843',
+        },
+        lime: {
+          50: '#F7FEE7',
+          100: '#ECFCCB',
+          200: '#D9F99D',
+          300: '#BEF264',
+          400: '#A8E6CF',
+          500: '#84CC16',
+          600: '#65A30D',
+        },
+        mint: {
+          50: '#F0FDF4',
+          100: '#DCFCE7',
+          200: '#BBF7D0',
+          300: '#86EFAC',
+          400: '#88D8B0',
+          500: '#22C55E',
+          600: '#16A34A',
+        },
+        graphite: {
+          400: '#6B7280',
+          500: '#374151',
+          600: '#2D3748',
+          700: '#1F2937',
+          800: '#111827',
+          900: '#0F172A',
+        },
+        sage: {
+          50: '#F8FAFC',
+          100: '#F1F5F9',
+          200: '#E2E8F0',
+          300: '#CBD5E1',
+          400: '#68737D',
+          500: '#475569',
+          600: '#334155',
+        },
+        powder: {
+          50: '#F8FAFC',
+          100: '#E2E8F0',
+          200: '#CBD5E1',
+          300: '#94A3B8',
+          400: '#64748B',
+        },
+        cream: {
+          50: '#FDF7F0',
+          100: '#FBF3E8',
+          200: '#F7E6D1',
+        },
+        vanilla: {
+          50: '#FAF5EF',
+          100: '#F5F0E8',
+          200: '#EDE2D1',
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'slide-up': 'slideUp 0.8s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-gentle': 'pulseGentle 2s ease-in-out infinite',
+        'bounce-subtle': 'bounceSubtle 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(60px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseGentle: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.02)' },
+        },
+        bounceGentle: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        spinSlow: {
+          'from': { transform: 'rotate(0deg)' },
+          'to': { transform: 'rotate(360deg)' },
+        },
+        bounceSubtle: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-3px)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%) skewX(-15deg)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'translateX(200%) skewX(-15deg)', opacity: '0' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 20px rgba(132, 204, 22, 0.5)' },
+          '100%': { boxShadow: '0 0 30px rgba(132, 204, 22, 0.8), 0 0 40px rgba(132, 204, 22, 0.3)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
