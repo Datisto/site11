@@ -81,7 +81,7 @@ const SpecialOffer = () => {
                 <div className="bg-lime-50 rounded-2xl p-4 lg:p-6 mt-4 lg:mt-6">
                   <h3 className="text-lg lg:text-xl font-bold text-graphite mb-3 lg:mb-4 font-montserrat">Цена доступа и условия</h3>
                   <ul className="space-y-1 lg:space-y-2 text-graphite text-sm lg:text-base">
-                    <li>• Цена доступа — <strong className="text-lime-600">12 €</strong> (первые дни), потом 190 €.</li>
+                    <li>• Цена доступа — <strong className="text-lime-600">12 €</strong>, потом 190 €.</li>
                     <li>• Доступ — навсегда.</li>
                     <li>• Гарантия вкуса и пользы: ты будешь есть вкусно и двигаться к цели без демонизации продуктов.</li>
                   </ul>
