@@ -94,8 +94,6 @@ const Hero = () => {
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200 lg:hidden">
               <p className="text-lg md:text-xl text-graphite-800 leading-relaxed font-manrope font-semibold mb-3">
                 + персональный разбор питания и тренировок
-              </p>
-              <p className="text-lg md:text-xl text-graphite-800 leading-relaxed font-manrope font-semibold mb-3">
                 Под твой ритм жизни — без срывов и жестких диет
               </p>
             </div>
