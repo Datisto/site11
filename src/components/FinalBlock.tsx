@@ -64,7 +64,7 @@ const FinalBlock = () => {
               <span className="line-through text-gray-500">190 €</span>
               <span className="text-yellow-300 ml-4">12 €</span>
             </div>
-            <p className="text-yellow-300 text-xl font-semibold font-montserrat">Экономия 7 € только сегодня!</p>
+            <p className="text-yellow-300 text-xl font-semibold font-montserrat">Экономия 178 € только сегодня!</p>
           </div>
         </div>
 
