@@ -98,7 +98,7 @@ const Hero = () => {
                   <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600">12 €</span>
                 </div>
                 <div className="text-gray-600 text-sm font-manrope">
-                  До конца акции: <span className="text-lime-600 font-bold">37% скидка</span>
+                  До конца акции: <span className="text-lime-600 font-bold">94% скидка</span>
                 </div>
               </div>
 
