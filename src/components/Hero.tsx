@@ -73,17 +73,29 @@ const Hero = () => {
               🍃
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-graphite-800 leading-tight font-montserrat">
-              РЕЦЕПТБУК<br />
-              <span className="text-lime-500">EAT&FIT</span>
-            </h1>
+            <div className="relative">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-graphite-800 leading-tight font-montserrat">
+                РЕЦЕПТБУК<br />
+                <span className="text-lime-500">EAT&FIT</span>
+              </h1>
 
-            {/* Main Subtitle */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200">
-              <p className="text-lg md:text-xl lg:text-2xl text-graphite-800 leading-relaxed font-manrope font-semibold mb-3">
+              {/* Main Subtitle - positioned to the right */}
+              <div className="absolute top-0 left-[380px] bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-lg border border-lime-200 max-w-md hidden lg:block">
+                <p className="text-base md:text-lg text-graphite-800 leading-relaxed font-manrope font-semibold mb-2">
+                  И персональный разбор питания и тренировок
+                </p>
+                <p className="text-sm md:text-base text-graphite-700 leading-relaxed font-manrope font-medium">
+                  Под твой ритм жизни — без срывов и жестких диет
+                </p>
+              </div>
+            </div>
+
+            {/* Main Subtitle - mobile version below title */}
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200 lg:hidden">
+              <p className="text-lg md:text-xl text-graphite-800 leading-relaxed font-manrope font-semibold mb-3">
                 И персональный разбор питания и тренировок
               </p>
-              <p className="text-base md:text-lg lg:text-xl text-graphite-700 leading-relaxed font-manrope font-medium">
+              <p className="text-base md:text-lg text-graphite-700 leading-relaxed font-manrope font-medium">
                 Под твой ритм жизни — без срывов и жестких диет
               </p>
             </div>
