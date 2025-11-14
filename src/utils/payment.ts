@@ -11,7 +11,7 @@ export const handlePayment = () => {
       setTimeout(() => {
         alert('✅ Тестовая оплата прошла успешно! Переходим в Telegram канал...');
         // Используем window.location.href для надежного перенаправления
-        window.location.href = 'https://t.me/+_D-q1Uh1isZjNzIy';
+        window.location.href = 'https://t.me/asyafitnessart_bot?start=ZGw6MzAwNTI2';
       }, 1000);
     }
     return;
@@ -27,7 +27,7 @@ export const handlePayment = () => {
         destination: 'Доступ к рецептбуку EAT&FIT',
         comment: 'Покупка доступа к закрытому каналу с рецептами - 600 грн'
       },
-      redirectUrl: 'https://t.me/+_D-q1Uh1isZjNzIy',
+      redirectUrl: 'https://t.me/asyafitnessart_bot?start=ZGw6MzAwNTI2',
       webHookUrl: `${window.location.origin}/webhook`
     };
 
