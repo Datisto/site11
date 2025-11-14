@@ -80,15 +80,14 @@ const Hero = () => {
               </h1>
 
               {/* Main Subtitle - positioned to the right of EAT&FIT */}
-              <div className="absolute bottom-0 left-[480px] bg-white/90 backdrop-blur-sm rounded-2xl p-3 lg:p-12 shadow-lg border border-lime-200 max-w-md hidden lg:block">
-                <p className="text-sm text-graphite-800 leading-snug font-manrope font-semibold mb-1.5">
-                  И персональный разбор питания и тренировок
-                </p>
-                <p className="text-xs text-graphite-700 leading-snug font-manrope font-medium">
-                  Под твой ритм жизни — без срывов и жестких диет
-                </p>
-              </div>
-            </div>
+<div className="absolute bottom-0 left-[88px] lg:left-[98px] backdrop-blur-sm rounded-2xl p-3 lg:p-12 shadow-lg border border-line-300 w-[320px] h-fit hidden lg:block">
+  <p className="text-xs text-graphite-700 leading-snug font-semibold mb-1.5">
+    И персональный разбор питания и тренировок
+  </p>
+  <p className="text-xs text-graphite-700 leading-snug font-normal">
+    Под твои цели и задачи — без срывов и жёстких диет
+  </p>
+</div>
 
             {/* Main Subtitle - mobile version below title */}
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200 lg:hidden">
