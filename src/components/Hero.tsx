@@ -81,7 +81,7 @@ const Hero = () => {
             {/* Subtitle - более читаемый */}
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200">
               <p className="text-base md:text-lg lg:text-xl text-graphite-800 leading-relaxed font-manrope font-medium">
-                Закрытый Telegram-канал с полезными рецептами, секретами ухода за телом и поддерживающим сообществом 24/7 — всё в одном канале
+                Экономь время и нервы: вкусные и полезные блюда до 15 минут, которые помогают не сорваться. Просто готовь и худей в компании таких же, как и ты.
               </p>
             </div>
 
