@@ -78,7 +78,17 @@ const Hero = () => {
               <span className="text-lime-500">EAT&FIT</span>
             </h1>
 
-            {/* Subtitle - более читаемый */}
+            {/* Main Subtitle */}
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200">
+              <p className="text-lg md:text-xl lg:text-2xl text-graphite-800 leading-relaxed font-manrope font-semibold mb-3">
+                И персональный разбор питания и тренировок
+              </p>
+              <p className="text-base md:text-lg lg:text-xl text-graphite-700 leading-relaxed font-manrope font-medium">
+                Под твой ритм жизни — без срывов и жестких диет
+              </p>
+            </div>
+
+            {/* Additional info */}
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200">
               <p className="text-base md:text-lg lg:text-xl text-graphite-800 leading-relaxed font-manrope font-medium">
                 Экономь время и нервы: вкусные и полезные блюда до 15 минут, которые помогают не сорваться. Просто готовь и худей в компании таких же, как и ты.
