@@ -11,10 +11,10 @@ const WhyItWorks = () => {
   const benefitsRef = useScrollAnimation();
 
   const [timeLeft, setTimeLeft] = useState({
-    days: 2,
-    hours: 23,
-    minutes: 59,
-    seconds: 59
+    days: 0,
+    hours: 0,
+    minutes: 3,
+    seconds: 10
   });
 
   useEffect(() => {
