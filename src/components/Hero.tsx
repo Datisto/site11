@@ -81,7 +81,7 @@ const Hero = () => {
 
               {/* Main Subtitle - positioned to the right of EAT&FIT */}
               <div className="absolute bottom-0 left-[480px] bg-white/90 backdrop-blur-sm rounded-2xl p-3 lg:p-4 shadow-lg border border-lime-200 max-w-xs hidden lg:block">
-                <p className="text-sm text-graphite-100 leading-snug font-manrope font-semibold mb-1.5">
+                <p className="text-sm text-graphite-800 leading-snug font-manrope font-semibold mb-1.5">
                   И персональный разбор питания и тренировок
                 </p>
                 <p className="text-xs text-graphite-700 leading-snug font-manrope font-medium">
