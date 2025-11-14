@@ -60,7 +60,7 @@ const WhyItWorks = () => {
         {/* Price Section */}
         <div ref={offerRef} className="text-center mb-6 animate-on-scroll">
           <h2 className="text-xl lg:text-3xl font-bold text-white mb-4 font-montserrat">
-            Только первые 3 дня скидка 37%
+            Только первые 3 дня скидка 94%
           </h2>
           
           <div className="inline-block bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 mb-4 relative max-w-md mx-auto">
