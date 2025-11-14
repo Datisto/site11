@@ -1,7 +1,7 @@
 // Интеграция с Monobank для оплаты
 export const handlePayment = () => {
   // ТЕСТОВЫЙ РЕЖИМ - раскомментируйте для тестирования редиректа
-  const isTestMode = true; // Поставьте false для реальных платежей
+  const isTestMode = false; // Поставьте false для реальных платежей
   
   if (isTestMode) {
     // Имитация успешной оплаты для тестирования
