@@ -65,7 +65,7 @@ const WhyItWorks = () => {
           
           <div className="inline-block bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 mb-4 relative max-w-md mx-auto">
             <div className="absolute -top-2 -right-2 lg:-top-3 lg:-right-3 bg-yellow-400 text-black rounded-full w-10 h-10 lg:w-14 lg:h-14 flex items-center justify-center font-bold text-xs lg:text-sm rotate-12 animate-bounce-subtle">
-              -37%
+              -94%
             </div>
             
             <div className="text-xl lg:text-3xl font-bold text-white mb-2 font-montserrat">
