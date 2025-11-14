@@ -69,7 +69,7 @@ const WhyItWorks = () => {
             </div>
             
             <div className="text-xl lg:text-3xl font-bold text-white mb-2 font-montserrat">
-              <span className="line-through text-white/50 text-base lg:text-xl">19 €</span>
+              <span className="line-through text-white/50 text-base lg:text-xl">190 €</span>
               <div className="text-yellow-300 animate-pulse text-xl lg:text-3xl">12 €</div>
             </div>
             
