@@ -7,7 +7,7 @@ const Hero = () => {
     days: 0,
     hours: 0,
     minutes: 3,
-    seconds: 10
+    seconds: 0
   });
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Hero = () => {
         } else if (prev.days > 0) {
           return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
         } else {
-          return { days: 2, hours: 23, minutes: 55, seconds: 20 };
+          return { days: 0, hours: 0, minutes: 3, seconds: 0 };
         }
       });
     }, 1000);
