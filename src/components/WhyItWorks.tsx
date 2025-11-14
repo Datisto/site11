@@ -74,7 +74,7 @@ const WhyItWorks = () => {
             </div>
             
             <p className="text-xs lg:text-sm text-white font-manrope">
-              Экономьте <span className="font-bold text-yellow-300">7 €</span> прямо сейчас!
+              Экономьте <span className="font-bold text-yellow-300">178 €</span> прямо сейчас!
             </p>
           </div>
         </div>
