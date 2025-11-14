@@ -14,7 +14,7 @@ const WhyItWorks = () => {
     days: 0,
     hours: 0,
     minutes: 3,
-    seconds: 10
+    seconds: 0
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const WhyItWorks = () => {
           return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
         } else {
           // Restart timer when it reaches zero
-          return { days: 2, hours: 23, minutes: 59, seconds: 59 };
+          return { days: 0, hours: 0, minutes: 3, seconds: 0 };
         }
       });
     }, 1000);
