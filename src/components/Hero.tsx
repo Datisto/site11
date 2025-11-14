@@ -84,7 +84,7 @@ const Hero = () => {
                 <p className="text-sm text-graphite-800 leading-snug font-manrope font-semibold mb-1.5">
                   И персональный разбор питания и тренировок
                 </p>
-                <p className="text-xs text-graphite-700 leading-snug font-manrope font-medium">
+                <p className="text-sm text-graphite-800 leading-snug font-manrope font-semibold mb-1.5">
                   Под твой ритм жизни — без срывов и жестких диет
                 </p>
               </div>
