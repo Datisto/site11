@@ -83,8 +83,6 @@ const Hero = () => {
               <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-line-200 max-w-sm hidden lg:block">
                 <p className="text-sm text-graphite-800 leading-snug font-manrope font-semibold mb-1.5">
                   + персональный разбор питания и тренировок
-                </p>
-                <p className="text-sm text-graphite-800 leading-snug font-manrope font-semibold mb-1.5">
                   Под твой ритм жизни — без срывов и жестких диет
                 </p>
               </div>
