@@ -4,10 +4,10 @@ import { handlePayment } from '../utils/payment';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 2,
-    hours: 23,
-    minutes: 55,
-    seconds: 20
+    days: 0,
+    hours: 0,
+    minutes: 3,
+    seconds: 10
   });
 
   useEffect(() => {
