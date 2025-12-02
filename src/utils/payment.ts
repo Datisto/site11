@@ -1,8 +1,15 @@
-// Интеграция с Monobank для оплаты
+// Интеграция с WayForPay для оплаты
+export const handlePayment = () => {
+  // Перенаправляем на страницу оплаты WayForPay
+  window.open('https://secure.wayforpay.com/button/b30a9d07471f7', '_blank');
+};
+
+/*
+// СТАРЫЙ КОД MONOBANK - закомментирован, можно вернуть при необходимости
 export const handlePayment = () => {
   // ТЕСТОВЫЙ РЕЖИМ - раскомментируйте для тестирования редиректа
   const isTestMode = false; // Поставьте false для реальных платежей
-  
+
   if (isTestMode) {
     // Имитация успешной оплаты для тестирования
     const confirmTest = confirm('ТЕСТОВЫЙ РЕЖИМ: Имитировать успешную оплату и перейти в Telegram канал?');
@@ -16,7 +23,7 @@ export const handlePayment = () => {
     }
     return;
   }
-  
+
   try {
     // Создаем запрос к Monobank API с правильными заголовками
     const paymentData = {
@@ -53,24 +60,10 @@ export const handlePayment = () => {
       console.error('Ошибка создания инвойса:', error);
       showFallbackPayment();
     });
-    
+
   } catch (error) {
     console.error('Ошибка при инициации платежа:', error);
     showFallbackPayment();
   }
 };
-
-// Fallback метод оплаты
-const showFallbackPayment = () => {
-  alert(`
-Для оплаты доступа к рецептбуку (600 грн):
-
-1. Переведите 600 грн на карту Monobank
-2. В комментарии укажите ваш email или Telegram
-3. После оплаты вам придет ссылка на канал
-
-Или свяжитесь с нами в Instagram: @artassya
-
-Спасибо за покупку! 💚
-  `);
-};
+*/
