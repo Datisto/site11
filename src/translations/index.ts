@@ -606,8 +606,8 @@ export const translations = {
     },
     footer: {
       copyright: {
-        ru: '© 2024 Здоровое питание. Все права защищены. Created in Ukraine',
-        ua: '© 2024 Здорове харчування. Всі права захищені. Created in Ukraine'
+        ru: '© 2024 Здоровое питание. Все права защищены. • Created in Ukraine',
+        ua: '© 2024 Здорове харчування. Всі права захищені. • Created in Ukraine'
       },
       privacy: {
         ru: 'Политика конфиденциальности',
