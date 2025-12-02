@@ -232,7 +232,7 @@ export const translations = {
   forWhom: {
     title: {
       ru: 'Для кого этот рецептбук?',
-      ua: 'Для кого це рецептбук?'
+      ua: 'Для кого цей рецептбук?'
     },
     suitable: {
       ru: 'ПОДХОДИТ',
