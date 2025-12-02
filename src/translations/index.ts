@@ -2,7 +2,7 @@ export const translations = {
   hero: {
     title: {
       ru: 'РЕЦЕПТБУК',
-      ua: 'КНИГА РЕЦЕПТІВ'
+      ua: 'РЕЦЕПТБУК'
     },
     titleAccent: {
       ru: 'EAT&FIT',
