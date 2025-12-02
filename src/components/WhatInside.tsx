@@ -2,8 +2,12 @@ import React from 'react';
 import { BookOpen, Utensils, Heart, Users, RefreshCw, Gift, User, Play, Calculator } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { handlePayment } from '../utils/payment';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const WhatInside = () => {
+  const { language } = useLanguage();
+  const t = translations.whatInside;
   const headerRef = useScrollAnimation();
   const statsRef = useScrollAnimation();
   const bonusesRef = useScrollAnimation();
@@ -12,38 +16,38 @@ const WhatInside = () => {
   const mainFeatures = [
     {
       number: "01",
-      title: "60+ рецептов на каждый день",
-      description: "Завтраки/обеды/ужины/перекусы, для каждого блюда - просчитанное КБЖУ",
+      title: t.features[0].title[language],
+      description: t.features[0].description[language],
       icon: Utensils
     },
     {
       number: "02",
-      title: "SOS-сладкое и ПП-десерты",
-      description: "Без демонизации продуктов",
+      title: t.features[1].title[language],
+      description: t.features[1].description[language],
       icon: Heart
     },
     {
       number: "03",
-      title: "Челлендж «7 дней завтраков»",
-      description: "Стартуем сразу, чтобы войти в ритм",
+      title: t.features[2].title[language],
+      description: t.features[2].description[language],
       icon: Play
     },
     {
       number: "04",
-      title: "Памятки и мини-гайды",
-      description: "По осознанному питанию",
+      title: t.features[3].title[language],
+      description: t.features[3].description[language],
       icon: BookOpen
     },
     {
       number: "05",
-      title: "Комьюнити-чат",
-      description: "Активное сообщество единомышленников для обмена опытом, мотивации и поддержки 24/7",
+      title: t.features[4].title[language],
+      description: t.features[4].description[language],
       icon: Users
     },
     {
       number: "06",
-      title: "Регулярное пополнение контента",
-      description: "Новые рецепты, советы, бонусы и анонсы продуктов о которых вы узнаете первыми",
+      title: t.features[5].title[language],
+      description: t.features[5].description[language],
       icon: RefreshCw
     }
   ];
@@ -51,57 +55,31 @@ const WhatInside = () => {
   const bonuses = [
     {
       icon: "https://i.ibb.co/XhNmmLM/image.png",
-      title: "«Правильная тарелка»",
-      description: "Наглядная схема баланса БЖУ и порций",
-      details: [
-        "яркие GIF-анимации, показывающие, как собрать тарелку",
-        "карточки с пояснениями по каждой группе продуктов",
-        "примеры сочетаний для сбалансированного питания"
-      ]
+      title: t.bonuses.items[0].title[language],
+      description: t.bonuses.items[0].description[language],
+      details: t.bonuses.items[0].details[language]
     },
     {
       icon: "https://i.ibb.co/p6jKNLy1/image.png",
-      title: "Рекомендации по уходу за кожей",
-      description: "Секреты красоты и здоровья",
-      details: [
-        "подборка лучших скрабов, масел и кремов",
-        "ссылки на проверенные продукты и аксессуары (щётки, массажёры и тп)",
-        "пошаговые советы по уходу и простые ритуалы дома"
-      ]
+      title: t.bonuses.items[1].title[language],
+      description: t.bonuses.items[1].description[language],
+      details: t.bonuses.items[1].details[language]
     },
     {
       icon: "https://i.ibb.co/R4T0DYTX/image.png",
-      title: "Видео МФР",
-      description: "Миофасциальный релиз для расслабления и восстановления",
-      details: [
-        "серия видео для разных зон (икры, бедра, спина, руки)",
-        "техники миофасциального релиза для снятия напряжения и расслабления",
-        "рекомендации по выбору роликов и мячей для самомассажа"
-      ]
+      title: t.bonuses.items[2].title[language],
+      description: t.bonuses.items[2].description[language],
+      details: t.bonuses.items[2].details[language]
     },
     {
       icon: "https://i.ibb.co/Q1LSCHC/image.png",
-      title: "Индивидуальный подсчёт КБЖУ",
-      description: "Для первых участников канала",
-      details: [
-        "персональная норма калорий и БЖУ под вашу цель (похудение, набор или поддержание формы)",
-        "подробный разбор продуктов и комбинаций для вашего режима дня",
-        "рекомендации, как корректировать рацион без жёстких ограничений",
-        "лёгкая система, которая поможет питаться осознанно и без стресса"
-      ]
+      title: t.bonuses.items[3].title[language],
+      description: t.bonuses.items[3].description[language],
+      details: t.bonuses.items[3].details[language]
     }
   ];
 
-  const stats = [
-    { number: "Завтраки", label: "Завтраки" },
-    { number: "Обеды", label: "Обеды" },
-    { number: "Ужины", label: "Ужины" },
-    { number: "Перекусы", label: "Перекусы" },
-    { number: "Десерты", label: "Десерты" },
-    { number: "В дорогу", label: "В дорогу" },
-    { number: "Смузи", label: "Смузи" },
-    { number: "Для компании", label: "Для компании" }
-  ];
+  const stats = t.stats[language].map(label => ({ number: label, label }));
 
   return (
     <section id="what-inside" className="py-20 relative overflow-hidden">
@@ -119,7 +97,7 @@ const WhatInside = () => {
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Что внутри канала
+            {t.title[language]}
           </h2>
         </div>
 
@@ -177,7 +155,7 @@ const WhatInside = () => {
           <div className="text-center mb-8 lg:mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-6 lg:px-8 py-3 rounded-full mb-4 shadow-lg">
               <Gift className="w-5 h-5" />
-              <span className="font-bold text-base lg:text-lg font-montserrat">БОНУСЫ</span>
+              <span className="font-bold text-base lg:text-lg font-montserrat">{t.bonuses.title[language]}</span>
             </div>
           </div>
 
@@ -246,11 +224,11 @@ const WhatInside = () => {
 
         {/* CTA Button */}
         <div ref={ctaRef} className="text-center animate-on-scroll">
-          <button 
+          <button
             onClick={handlePayment}
             className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 lg:px-12 py-3 lg:py-4 rounded-full font-bold text-lg lg:text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat relative overflow-hidden animate-pulse-gentle before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12 shadow-lg"
           >
-            <span className="relative z-10">ПОЛУЧИТЬ ДОСТУП</span>
+            <span className="relative z-10">{t.button[language]}</span>
           </button>
         </div>
       </div>

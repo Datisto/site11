@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Instagram } from 'lucide-react';
 import { handlePayment } from '../utils/payment';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const Hero = () => {
+  const { language, setLanguage } = useLanguage();
+  const t = translations.hero;
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -41,11 +46,36 @@ const Hero = () => {
         />
       </div>
 
-      {/* Social Icons - Top Right */}
+      {/* Social Icons and Language Switcher - Top Right */}
       <div className="absolute top-6 right-6 z-20 flex items-center space-x-3">
-        <a 
-          href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
-          target="_blank" 
+        {/* Language Switcher */}
+        <div className="bg-white rounded-full shadow-lg overflow-hidden flex">
+          <button
+            onClick={() => setLanguage('ru')}
+            className={`px-4 py-2 font-bold text-sm transition-all duration-300 ${
+              language === 'ru'
+                ? 'bg-lime-400 text-white'
+                : 'bg-white text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            RU
+          </button>
+          <button
+            onClick={() => setLanguage('ua')}
+            className={`px-4 py-2 font-bold text-sm transition-all duration-300 ${
+              language === 'ua'
+                ? 'bg-lime-400 text-white'
+                : 'bg-white text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            UA
+          </button>
+        </div>
+
+        {/* Instagram Icon */}
+        <a
+          href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt"
+          target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         >
@@ -75,14 +105,14 @@ const Hero = () => {
 
             <div className="relative">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-graphite-800 leading-tight font-montserrat">
-                РЕЦЕПТБУК<br />
-                <span className="text-lime-500">EAT&FIT</span>
+                {t.title[language]}<br />
+                <span className="text-lime-500">{t.titleAccent[language]}</span>
               </h1>
 
               {/* Main Subtitle - positioned to the right of EAT&FIT */}
               <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-lime-200 max-w-2xl hidden lg:block">
                 <p className="text-base md:text-lg lg:text-xl text-graphite-800 leading-relaxed font-manrope font-medium">
-                  + Персональный разбор питания и тренировок. Под твой ритм жизни — без срывов и жестких диет
+                  {t.subtitle1[language]}
                 </p>
               </div>
             </div>
@@ -90,15 +120,14 @@ const Hero = () => {
             {/* Main Subtitle - mobile version below title */}
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200 lg:hidden">
               <p className="text-base md:text-lg lg:text-xl text-graphite-800 leading-relaxed font-manrope font-medium">
-                  + Персональный разбор питания и тренировок.
-                  Под твой ритм жизни — без срывов и жестких диет
+                  {t.subtitle1[language]}
                 </p>
             </div>
 
             {/* Additional info */}
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200">
               <p className="text-base md:text-lg lg:text-xl text-graphite-800 leading-relaxed font-manrope font-medium">
-                Экономь время и нервы: вкусные и полезные блюда до 15 минут, которые помогают не сорваться. Просто готовь и худей в компании таких же, как и ты.
+                {t.subtitle2[language]}
               </p>
             </div>
 
@@ -106,7 +135,7 @@ const Hero = () => {
             <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-2xl max-w-lg border border-lime-200">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 bg-lime-400 rounded-full"></div>
-                <span className="text-lime-600 font-bold text-sm font-montserrat">АКЦИЯ СЕГОДНЯ</span>
+                <span className="text-lime-600 font-bold text-sm font-montserrat">{t.specialOffer[language]}</span>
               </div>
               
               <div className="mb-4 lg:mb-6">
@@ -115,7 +144,7 @@ const Hero = () => {
                   <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600">12 €</span>
                 </div>
                 <div className="text-gray-600 text-sm font-manrope">
-                  До конца акции: <span className="text-lime-600 font-bold">94% скидка</span>
+                  {t.discountText[language]} <span className="text-lime-600 font-bold">{t.discountAmount[language]}</span>
                 </div>
               </div>
 
@@ -123,27 +152,27 @@ const Hero = () => {
               <div className="grid grid-cols-4 gap-2 lg:gap-3 mb-4 lg:mb-6">
                 <div className="bg-lime-100 rounded-2xl p-2 lg:p-3 text-center">
                   <div className="text-xl lg:text-2xl font-bold text-graphite-800 font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">дней</div>
+                  <div className="text-xs text-gray-600 font-manrope">{t.timer.days[language]}</div>
                 </div>
                 <div className="bg-lime-100 rounded-2xl p-2 lg:p-3 text-center">
                   <div className="text-xl lg:text-2xl font-bold text-graphite-800 font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">часов</div>
+                  <div className="text-xs text-gray-600 font-manrope">{t.timer.hours[language]}</div>
                 </div>
                 <div className="bg-lime-100 rounded-2xl p-2 lg:p-3 text-center">
                   <div className="text-xl lg:text-2xl font-bold text-graphite-800 font-montserrat">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">минут</div>
+                  <div className="text-xs text-gray-600 font-manrope">{t.timer.minutes[language]}</div>
                 </div>
                 <div className="bg-lime-100 rounded-2xl p-2 lg:p-3 text-center">
                   <div className="text-xl lg:text-2xl font-bold text-graphite-800 font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">секунд</div>
+                  <div className="text-xs text-gray-600 font-manrope">{t.timer.seconds[language]}</div>
                 </div>
               </div>
               
-              <button 
+              <button
                 onClick={handlePayment}
                 className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg transition-all duration-300 hover:scale-105 font-montserrat shadow-lg"
               >
-                КУПИТЬ СО СКИДКОЙ
+                {t.buyButton[language]}
               </button>
             </div>
           </div>
@@ -159,7 +188,7 @@ const Hero = () => {
               
               {/* Author label */}
               <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-                <span className="text-graphite-600 text-sm font-manrope">Автор: Asya</span>
+                <span className="text-graphite-600 text-sm font-manrope">{t.author[language]}</span>
               </div>
             </div>
           </div>

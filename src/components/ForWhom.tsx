@@ -1,56 +1,30 @@
 import React from 'react';
 import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const ForWhom = () => {
+  const { language } = useLanguage();
+  const t = translations.forWhom;
   const headerRef = useScrollAnimation();
   const tabsRef = useScrollAnimation();
   const contentRef = useScrollAnimation();
 
   const forWhom = [
-    {
-      icon: Target,
-      text: "Тем, кто хочет похудеть без стрессовых диет"
-    },
-    {
-      icon: Clock,
-      text: "Занятым людям, которые ценят быстрые и здоровые рецепты"
-    },
-    {
-      icon: Heart,
-      text: "Тем, кто хочет питаться вкусно без ограничений"
-    },
-    {
-      icon: Users,
-      text: "Людям, которые устали от однообразного питания"
-    },
-    {
-      icon: DollarSign,
-      text: "Тем, кто заботится о здоровье семьи и детей"
-    }
+    { icon: Target, text: t.forWhom[language][0] },
+    { icon: Clock, text: t.forWhom[language][1] },
+    { icon: Heart, text: t.forWhom[language][2] },
+    { icon: Users, text: t.forWhom[language][3] },
+    { icon: DollarSign, text: t.forWhom[language][4] }
   ];
 
   const notForWhom = [
-    {
-      icon: Brain,
-      text: "Тем, кто ищет волшебную таблетку для похудения"
-    },
-    {
-      icon: Ban,
-      text: "Людям, которые не готовы тратить время на готовку"
-    },
-    {
-      icon: Utensils,
-      text: "Тем, кто хочет есть только фастфуд и сладости"
-    },
-    {
-      icon: Zap,
-      text: "Людям, которые не верят в силу правильного питания"
-    },
-    {
-      icon: X,
-      text: "Тем, кто не готов менять пищевые привычки"
-    }
+    { icon: Brain, text: t.notForWhom[language][0] },
+    { icon: Ban, text: t.notForWhom[language][1] },
+    { icon: Utensils, text: t.notForWhom[language][2] },
+    { icon: Zap, text: t.notForWhom[language][3] },
+    { icon: X, text: t.notForWhom[language][4] }
   ];
 
   return (
@@ -58,7 +32,7 @@ const ForWhom = () => {
       <div className="container mx-auto px-6">
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Для кого этот рецептбук?
+            {t.title[language]}
           </h2>
         </div>
 
@@ -67,10 +41,10 @@ const ForWhom = () => {
           <div ref={tabsRef} className="flex justify-center mb-8 lg:mb-12 animate-on-scroll">
             <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
               <div className="bg-green-500 text-white px-4 py-2 lg:px-8 lg:py-4 font-bold text-sm lg:text-lg font-montserrat">
-                ПОДХОДИТ
+                {t.suitable[language]}
               </div>
               <div className="bg-red-500 text-white px-4 py-2 lg:px-8 lg:py-4 font-bold text-sm lg:text-lg font-montserrat">
-                НЕ ПОДХОДИТ
+                {t.notSuitable[language]}
               </div>
             </div>
           </div>
