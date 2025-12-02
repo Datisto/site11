@@ -104,7 +104,7 @@ const FinalBlock = () => {
       {/* Footer */}
       <footer className="text-center mt-12">
         <p className="text-gray-400 text-xs font-manrope">
-          © 2024 Здоровое питание. Все права защищены.
+          © 2024 Здоровое питание. Все права защищены. Created in Ukraine
           {' • '}
           <a href="#" className="hover:text-yellow-300 transition-colors">Политика конфиденциальности</a>
           {' • '}
