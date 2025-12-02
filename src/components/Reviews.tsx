@@ -5,44 +5,29 @@ import { translations } from '../translations';
 
 const Reviews = () => {
   const { language } = useLanguage();
-  const t = translations.reviews;
-  const reviews = [
-    {
-      name: "Оксана Гончар",
-      age: "29 лет",
-      text: "Рецепты простые, всё готовится быстро, а блюда реально вкусные. Муж тоже подключился - худею сама, и балую вкусненьким мужа!",
-      rating: 5,
-      image: "https://i.ibb.co/DS6PVRC/IMG-20250918-152536-234.jpg"
-    },
-    {
-      name: "Ирина Коваленко",
-      age: "33 года",
-      text: "Очень удобно: не нужно ломать голову, что приготовить. Все рецепты из обычных продуктов, которые есть в магазине возле дома. Экономлю время и деньги.",
-      rating: 5,
-      image: "https://i.ibb.co/jZJ5kZnf/IMG-20250918-152538-322.jpg"
-    },
-    {
-      name: "Татьяна Мельник",
-      age: "45 лет",
-      text: "Мне важно было наладить питание без строгих диет. Благодаря этому сборнику ушли лишние 4 кг за месяц, и самое главное — появилось больше энергии.",
-      rating: 5,
-      image: "https://i.ibb.co/RpM3vKQt/IMG-20250918-152539-979.jpg"
-    },
-    {
-      name: "Наталия Шевченко",
-      age: "24 года",
-      text: "Я студентка, и у меня мало времени на готовку и никогда нет идей что приготовить. Эти рецепты моё спасение: быстро, недорого и полезно)",
-      rating: 5,
-      image: "https://i.ibb.co/fdXyzmTx/IMG-20250918-152542-387.jpg"
-    }
+  const tReviews = translations.reviews;
+
+  const images = [
+    "https://i.ibb.co/DS6PVRC/IMG-20250918-152536-234.jpg",
+    "https://i.ibb.co/jZJ5kZnf/IMG-20250918-152538-322.jpg",
+    "https://i.ibb.co/RpM3vKQt/IMG-20250918-152539-979.jpg",
+    "https://i.ibb.co/fdXyzmTx/IMG-20250918-152542-387.jpg"
   ];
+
+  const reviews = tReviews.items.map((item, index) => ({
+    name: item.name,
+    age: item.age[language],
+    text: item.text[language],
+    rating: 5,
+    image: images[index]
+  }));
 
   return (
     <section id="reviews" className="py-12 lg:py-20 bg-gradient-to-b from-sage-50 via-powder-50 to-mint-50">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-graphite mb-4 lg:mb-6 font-montserrat">
-            {t.title[language]}
+            {tReviews.title[language]}
           </h2>
         </div>
 

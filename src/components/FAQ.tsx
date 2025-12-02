@@ -6,44 +6,22 @@ import { translations } from '../translations';
 const FAQ = () => {
   const { language } = useLanguage();
   const tFaq = translations.faq;
-  const faqItems = [
-    {
-      question: "Что за бонусы?",
-      answer: "«Правильная тарелка» — GIF-схемы как правильно составить тарелку + карточки с подробным разъяснением\n\n«Видео МФР» — короткие ролики по зонам: стопы, икры, бёдра/ягодицы, спина, грудной отдел, плечи/руки.\n\n«Уход за кожей» — список проверенных скрабов/масел, щёток для тела, массажёры, пошаговые мини-ритуалы + ссылки где купить\n\nРегулярное обновление канала",
-      bgColor: "bg-gradient-to-br from-yellow-400 to-orange-400",
-      textColor: "text-white"
-    },
-    {
-      question: "Это дорого!",
-      answer: "Цена - это про ценность. А с нашим Рецептбуком ты не только экономишь время на поиски и раздумья «что приготовить сегодня», а и получаешь:\n- полностью просчитанный КБЖУ для каждого блюда; гайд по уходу за кожей; МФР-упражнения для всего тела; картинки с пояснениями, как делать массаж; схему «правильной тарелки» — как собрать сбалансированный приём пищи; комьюнити с поддержкой и челленджами — среди участниц разыгрываем духи.\nНе файл, а система с обновлениями — готовишь спокойно и живёшь проще.",
-      bgColor: "bg-gradient-to-br from-coral-400 to-red-400",
-      textColor: "text-white"
-    },
-    {
-      question: "Нужны ли супер-ингредиенты?",
-      answer: "Нет, никаких редких или дорогих продуктов покупать не придётся. Все рецепты составлены из простых и доступных ингредиентов, которые можно найти в ближайшем магазине.\nВам не нужны экзотические порошки или добавки — только то, что легко включить в повседневное меню. Такой подход экономит время, деньги и силы, а результат остаётся тем же: вкусное и сбалансированное питание, которое работает на вашу цель.",
-      bgColor: "bg-gradient-to-br from-blue-400 to-blue-500",
-      textColor: "text-white"
-    },
-    {
-      question: "А если я на ГВ?",
-      answer: "Идея — про сбалансированное питание, а не диету. Но на ГВ всё индивидуально: ориентируйтесь на самочувствие и рекомендации вашего врача.",
-      bgColor: "bg-gradient-to-br from-green-400 to-green-500",
-      textColor: "text-white"
-    },
-    {
-      question: "Нужны ли кухонные весы?",
-      answer: "Весы — это идеальный вариант, ведь подсчёт КБЖУ основан на точной граммовке продуктов. Так вы получаете максимально предсказуемый и понятный результат, без «на глаз».\nНо если весов нет — не проблема. Можно использовать мерный стакан, ложки или ориентироваться на удобные подсказки «по порциям», которые мы подготовили. Такой подход позволит вам всё равно двигаться к цели без лишнего стресса.",
-      bgColor: "bg-gradient-to-br from-purple-400 to-purple-500",
-      textColor: "text-white"
-    },
-    {
-      question: "Почему канал, а не PDF?",
-      answer: "Канал удобный - поиск по тегам, обсуждения, постоянные обновления. PDF устаревает, а в канале материалы всегда актуальны.",
-      bgColor: "bg-gradient-to-br from-orange-400 to-orange-500",
-      textColor: "text-white"
-    }
+
+  const bgColors = [
+    "bg-gradient-to-br from-yellow-400 to-orange-400",
+    "bg-gradient-to-br from-coral-400 to-red-400",
+    "bg-gradient-to-br from-blue-400 to-blue-500",
+    "bg-gradient-to-br from-green-400 to-green-500",
+    "bg-gradient-to-br from-purple-400 to-purple-500",
+    "bg-gradient-to-br from-orange-400 to-orange-500"
   ];
+
+  const faqItems = tFaq.items.map((item, index) => ({
+    question: item.question[language],
+    answer: item.answer[language],
+    bgColor: bgColors[index],
+    textColor: "text-white"
+  }));
 
   return (
     <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -67,23 +45,11 @@ const FAQ = () => {
                 {item.question}
               </h3>
               <p className={`text-xs lg:text-base leading-relaxed font-manrope ${item.textColor} opacity-90`}>
-                {item.answer.split('\n').map((line, lineIndex) => {
-                  // Обрабатываем жирный текст - все что было в скобках в промте
-                  const parts = line.split(/(\«Правильная тарелка\»|Видео МФР|Уход за кожей|щёток для тела|ссылки|обновление|Цена - это про ценность|полностью просчитанный КБЖУ для каждого блюда; гайд по уходу за кожей; МФР-упражнения|картинки с пояснениями|схему «правильной тарелки»|комьюнити с поддержкой и челленджами)/g);
-                  
-                  return (
-                    <span key={lineIndex} className="block mb-2 last:mb-0">
-                      {parts.map((part, partIndex) => {
-                        const shouldBeBold = /\«Правильная тарелка\»|Видео МФР|Уход за кожей|щёток для тела|ссылки|обновление|Цена - это про ценность|полностью просчитанный КБЖУ для каждого блюда; гайд по уходу за кожей; МФР-упражнения|картинки с пояснениями|схему «правильной тарелки»|комьюнити с поддержкой и челленджами|сбалансированное питание|Весы|конкретную граммовку|Супер-ингредиенты|поиск по тегам|постоянные обновления/.test(part);
-                        return shouldBeBold ? (
-                          <strong key={partIndex} className="font-bold">{part}</strong>
-                        ) : (
-                          <span key={partIndex}>{part}</span>
-                        );
-                      })}
-                    </span>
-                  );
-                })}
+                {item.answer.split('\n').map((line, lineIndex) => (
+                  <span key={lineIndex} className="block mb-2 last:mb-0">
+                    {line}
+                  </span>
+                ))}
               </p>
             </div>
           ))}
