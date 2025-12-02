@@ -10,8 +10,9 @@ export const handlePayment = () => {
     });
   }
 
-  // Перенаправляем на страницу оплаты WayForPay
-  window.open('https://secure.wayforpay.com/button/b30a9d07471f7', '_blank');
+  // Перенаправляем на страницу оплаты WayForPay в той же вкладке
+  // После оплаты WayForPay должен перенаправить на Telegram бот
+  window.location.href = 'https://secure.wayforpay.com/button/b30a9d07471f7';
 };
 
 /*
