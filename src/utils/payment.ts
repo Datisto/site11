@@ -1,5 +1,15 @@
 // Интеграция с WayForPay для оплаты
 export const handlePayment = () => {
+  // Отслеживание события InitiateCheckout для Meta Pixel
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'InitiateCheckout', {
+      content_name: 'РЕЦЕПТБУК EAT&FIT',
+      content_category: 'Рецепти',
+      value: 12.00,
+      currency: 'EUR'
+    });
+  }
+
   // Перенаправляем на страницу оплаты WayForPay
   window.open('https://secure.wayforpay.com/button/b30a9d07471f7', '_blank');
 };
