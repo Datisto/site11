@@ -1,7 +1,11 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const Reviews = () => {
+  const { language } = useLanguage();
+  const t = translations.reviews;
   const reviews = [
     {
       name: "Оксана Гончар",
@@ -38,7 +42,7 @@ const Reviews = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-8 lg:mb-16">
           <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-graphite mb-4 lg:mb-6 font-montserrat">
-            Отзывы покупателей
+            {t.title[language]}
           </h2>
         </div>
 

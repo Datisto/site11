@@ -1,7 +1,11 @@
 import React from 'react';
 import { handlePayment } from '../utils/payment';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const FAQ = () => {
+  const { language } = useLanguage();
+  const tFaq = translations.faq;
   const faqItems = [
     {
       question: "Что за бонусы?",
@@ -46,10 +50,10 @@ const FAQ = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-graphite-800 mb-4 lg:mb-6 font-montserrat">
-            FAQ
+            {tFaq.title[language]}
           </h2>
           <p className="text-base lg:text-xl text-graphite-600 max-w-3xl mx-auto font-manrope">
-            Здесь собраны самые частые вопросы от наших клиентов. Если не найдете ответ на свой вопрос, обязательно напишите нам!
+            {tFaq.subtitle[language]}
           </p>
         </div>
 
@@ -87,15 +91,15 @@ const FAQ = () => {
 
         <div className="text-center">
           <p className="text-graphite-600 text-sm lg:text-lg mb-4 lg:mb-6 font-manrope">
-            Не нашли ответ на свой вопрос?
+            {tFaq.notFound[language]}
           </p>
-          <a 
-            href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
-            target="_blank" 
+          <a
+            href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt"
+            target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
           >
-            Спроси у меня
+            {tFaq.askMe[language]}
           </a>
         </div>
       </div>

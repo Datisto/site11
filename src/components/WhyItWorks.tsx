@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Clock, Star, Flame, ArrowRight, Gift } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { handlePayment } from '../utils/payment';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const WhyItWorks = () => {
+  const { language } = useLanguage();
+  const t = translations.whyItWorks;
   const headerRef = useScrollAnimation();
   const offerRef = useScrollAnimation();
   const timerRef = useScrollAnimation();
@@ -38,12 +42,7 @@ const WhyItWorks = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const benefits = [
-    "Мгновенный доступ после оплаты", 
-    "Бонусы в подарок",
-    "Пожизненный доступ",
-    "Подходит для всей семьи"
-  ];
+  const benefits = t.benefits[language];
 
   return (
     <section id="why-it-works" className="py-8 bg-gradient-to-br from-orange-500 to-red-500 relative overflow-hidden">
@@ -53,14 +52,14 @@ const WhyItWorks = () => {
         <div ref={headerRef} className="text-center mb-6 animate-on-scroll">
           <div className="inline-flex items-center gap-2 lg:gap-4 bg-white/10 backdrop-blur-sm rounded-3xl px-4 lg:px-8 py-4 lg:py-6 mb-4 max-w-2xl mx-auto">
             <Flame className="w-8 h-8 lg:w-12 lg:h-12 text-yellow-300 animate-pulse" />
-            <span className="text-white font-bold text-lg lg:text-3xl font-montserrat">ОГРАНИЧЕННОЕ ПРЕДЛОЖЕНИЕ</span>
+            <span className="text-white font-bold text-lg lg:text-3xl font-montserrat">{t.limitedOffer[language]}</span>
           </div>
         </div>
 
         {/* Price Section */}
         <div ref={offerRef} className="text-center mb-6 animate-on-scroll">
           <h2 className="text-xl lg:text-3xl font-bold text-white mb-4 font-montserrat">
-            Только первые 3 дня скидка 94%
+            {t.title[language]}
           </h2>
           
           <div className="inline-block bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 mb-4 relative max-w-md mx-auto">
@@ -74,7 +73,7 @@ const WhyItWorks = () => {
             </div>
             
             <p className="text-xs lg:text-sm text-white font-manrope">
-              Экономьте <span className="font-bold text-yellow-300">178 €</span> прямо сейчас!
+              {t.saveAmount[language].split('178 €')[0]}<span className="font-bold text-yellow-300">178 €</span>{t.saveAmount[language].split('178 €')[1]}
             </p>
           </div>
         </div>
@@ -84,25 +83,25 @@ const WhyItWorks = () => {
           <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-3 lg:p-4 text-center">
             <div className="flex items-center gap-2 justify-center mb-3">
               <Clock className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-300 animate-pulse" />
-              <span className="text-white font-semibold text-xs lg:text-sm font-montserrat">До конца акции:</span>
+              <span className="text-white font-semibold text-xs lg:text-sm font-montserrat">{t.timerLabel[language]}</span>
             </div>
             
             <div className="grid grid-cols-4 gap-1 lg:gap-2 text-white">
               <div className="bg-white/30 rounded-lg p-1 lg:p-2 text-center">
                 <div className="text-lg lg:text-xl font-bold animate-pulse font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
-                <div className="text-xs font-manrope">дней</div>
+                <div className="text-xs font-manrope">{t.timer.days[language]}</div>
               </div>
               <div className="bg-white/30 rounded-lg p-1 lg:p-2 text-center">
                 <div className="text-lg lg:text-xl font-bold animate-pulse font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
-                <div className="text-xs font-manrope">часов</div>
+                <div className="text-xs font-manrope">{t.timer.hours[language]}</div>
               </div>
               <div className="bg-white/30 rounded-lg p-1 lg:p-2 text-center">
                 <div className="text-lg lg:text-xl font-bold animate-pulse font-montserrat">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                <div className="text-xs font-manrope">минут</div>
+                <div className="text-xs font-manrope">{t.timer.minutes[language]}</div>
               </div>
               <div className="bg-white/30 rounded-lg p-1 lg:p-2 text-center">
                 <div className="text-lg lg:text-xl font-bold animate-pulse font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                <div className="text-xs font-manrope">секунд</div>
+                <div className="text-xs font-manrope">{t.timer.seconds[language]}</div>
               </div>
             </div>
           </div>
@@ -134,13 +133,13 @@ const WhyItWorks = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-300/20 to-lime-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 flex items-center justify-center gap-2">
-              КУПИТЬ ЗА 12 € СЕЙЧАС
+              {t.button[language]}
               <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" />
             </span>
           </button>
 
           <p className="text-white/80 text-xs lg:text-sm font-manrope">
-            ✓ Безопасная оплата • ✓ Мгновенный доступ • ✓ Гарантия возврата
+            {t.guarantee[language]}
           </p>
         </div>
 
