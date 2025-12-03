@@ -1,8 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 
 export default function Success() {
+  const [isValidPurchase, setIsValidPurchase] = useState(false);
+
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderReference = urlParams.get('orderReference');
+
+    if (!orderReference) {
+      window.location.href = '/';
+      return;
+    }
+
+    setIsValidPurchase(true);
+
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Purchase', {
         value: 12.00,
@@ -14,6 +26,14 @@ export default function Success() {
   const handleTelegramClick = () => {
     window.location.href = 'https://t.me/asyafitnessart_bot?start=ZGw6MzAwNTI2';
   };
+
+  if (!isValidPurchase) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center px-4">
