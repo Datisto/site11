@@ -62,8 +62,11 @@ Deno.serve(async (req: Request) => {
       productPrice: paymentData.productPrice,
       productCount: paymentData.productCount,
       returnUrl,
-      serviceUrl: `${merchantDomainName}/webhook`
+      serviceUrl: `${merchantDomainName}/webhook`,
+      language: "UA"
     };
+
+    console.log("WayForPay Request:", JSON.stringify(wayforpayRequest, null, 2));
 
     const response = await fetch("https://api.wayforpay.com/api", {
       method: "POST",
@@ -74,6 +77,8 @@ Deno.serve(async (req: Request) => {
     });
 
     const result = await response.json();
+
+    console.log("WayForPay Response:", JSON.stringify(result, null, 2));
 
     return new Response(
       JSON.stringify(result),

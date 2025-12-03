@@ -40,10 +40,14 @@ export const handlePayment = async () => {
 
     const result = await response.json();
 
+    console.log('WayForPay Response:', result);
+
     if (result.invoiceUrl) {
       window.location.href = result.invoiceUrl;
-    } else if (result.reason === 'Ok') {
-      alert('Платіж успішно створено, але посилання не отримано. Спробуйте ще раз.');
+    } else if (result.url) {
+      window.location.href = result.url;
+    } else if (result.reason === 'Ok' || result.reasonCode === 1100) {
+      alert('Платіж успішно створено, але посилання не отримано. Відповідь: ' + JSON.stringify(result));
     } else {
       throw new Error(result.reasonCode || 'Помилка створення платежу');
     }
