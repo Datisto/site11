@@ -1,18 +1,56 @@
 // Интеграция с WayForPay для оплаты
-export const handlePayment = () => {
-  // Отслеживание события InitiateCheckout для Meta Pixel
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'InitiateCheckout', {
-      content_name: 'РЕЦЕПТБУК EAT&FIT',
-      content_category: 'Рецепти',
-      value: 12.00,
-      currency: 'EUR'
-    });
-  }
+export const handlePayment = async () => {
+  try {
+    // Отслеживание события InitiateCheckout для Meta Pixel
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: 'РЕЦЕПТБУК EAT&FIT',
+        content_category: 'Рецепти',
+        value: 12.00,
+        currency: 'EUR'
+      });
+    }
 
-  // Перенаправляем на страницу оплаты WayForPay в той же вкладке
-  // После оплаты WayForPay должен перенаправить на Telegram бот
-  window.location.href = 'https://secure.wayforpay.com/button/b30a9d07471f7';
+    const orderReference = `order_${Date.now()}`;
+    const orderDate = Math.floor(Date.now() / 1000);
+
+    const paymentData = {
+      orderReference,
+      orderDate,
+      amount: 12,
+      currency: 'EUR',
+      productName: ['РЕЦЕПТБУК EAT&FIT'],
+      productPrice: [12],
+      productCount: [1]
+    };
+
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+    const apiUrl = `${supabaseUrl}/functions/v1/create-payment`;
+
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${supabaseAnonKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(paymentData)
+    });
+
+    const result = await response.json();
+
+    if (result.invoiceUrl) {
+      window.location.href = result.invoiceUrl;
+    } else if (result.reason === 'Ok') {
+      alert('Платіж успішно створено, але посилання не отримано. Спробуйте ще раз.');
+    } else {
+      throw new Error(result.reasonCode || 'Помилка створення платежу');
+    }
+  } catch (error) {
+    console.error('Помилка при створенні платежу:', error);
+    alert('Виникла помилка при створенні платежу. Спробуйте ще раз.');
+  }
 };
 
 /*
