@@ -54,6 +54,7 @@ Deno.serve(async (req: Request) => {
       merchantAccount,
       merchantDomainName,
       merchantSignature,
+      apiVersion: 1,
       orderReference: paymentData.orderReference,
       orderDate: paymentData.orderDate,
       amount: paymentData.amount,
