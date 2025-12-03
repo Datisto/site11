@@ -14,6 +14,9 @@ export const handlePayment = async () => {
     const orderReference = `order_${Date.now()}`;
     const orderDate = Math.floor(Date.now() / 1000);
 
+    localStorage.setItem('pendingPayment', orderReference);
+    localStorage.setItem('paymentTimestamp', Date.now().toString());
+
     const paymentData = {
       orderReference,
       orderDate,

@@ -5,13 +5,27 @@ export default function Success() {
   const [isValidPurchase, setIsValidPurchase] = useState(false);
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const orderReference = urlParams.get('orderReference');
+    const pendingPayment = localStorage.getItem('pendingPayment');
+    const paymentTimestamp = localStorage.getItem('paymentTimestamp');
 
-    if (!orderReference) {
+    if (!pendingPayment || !paymentTimestamp) {
       window.location.href = '/';
       return;
     }
+
+    const timestamp = parseInt(paymentTimestamp);
+    const now = Date.now();
+    const hourInMs = 60 * 60 * 1000;
+
+    if (now - timestamp > hourInMs) {
+      localStorage.removeItem('pendingPayment');
+      localStorage.removeItem('paymentTimestamp');
+      window.location.href = '/';
+      return;
+    }
+
+    localStorage.removeItem('pendingPayment');
+    localStorage.removeItem('paymentTimestamp');
 
     setIsValidPurchase(true);
 
