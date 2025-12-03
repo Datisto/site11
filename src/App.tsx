@@ -7,8 +7,15 @@ import WhyItWorks from './components/WhyItWorks';
 import Reviews from './components/Reviews';
 import FAQ from './components/FAQ';
 import FinalBlock from './components/FinalBlock';
+import Success from './pages/Success';
 
 function App() {
+  const isSuccessPage = window.location.pathname === '/success';
+
+  if (isSuccessPage) {
+    return <Success />;
+  }
+
   return (
     <div className="min-h-screen">
       <Hero />

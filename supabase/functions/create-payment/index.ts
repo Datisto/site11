@@ -28,8 +28,8 @@ Deno.serve(async (req: Request) => {
   try {
     const merchantAccount = Deno.env.get("WAYFORPAY_MERCHANT_ACCOUNT") || "";
     const merchantSecretKey = Deno.env.get("WAYFORPAY_SECRET_KEY") || "";
-    const merchantDomainName = Deno.env.get("WAYFORPAY_DOMAIN") || "https://eatfit-recipebook.netlify.app";
-    const returnUrl = "https://t.me/asyafitnessart_bot?start=ZGw6MzAwNTI2";
+    const merchantDomainName = Deno.env.get("WAYFORPAY_DOMAIN") || "https://asya-recipes.netlify.app";
+    const returnUrl = "https://asya-recipes.netlify.app/success";
 
     const paymentData: PaymentRequest = await req.json();
 
