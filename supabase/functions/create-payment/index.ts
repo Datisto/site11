@@ -29,7 +29,7 @@ Deno.serve(async (req: Request) => {
     const merchantAccount = Deno.env.get("WAYFORPAY_MERCHANT_ACCOUNT") || "";
     const merchantSecretKey = Deno.env.get("WAYFORPAY_SECRET_KEY") || "";
     const merchantDomainName = Deno.env.get("WAYFORPAY_DOMAIN") || "https://asya-recipes.netlify.app";
-    const returnUrl = "https://asya-recipes.netlify.app/success";
+    const returnUrl = `${Deno.env.get("SUPABASE_URL")}/functions/v1/payment-redirect`;
 
     const paymentData: PaymentRequest = await req.json();
 
