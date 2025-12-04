@@ -6,7 +6,7 @@ export const handlePayment = async () => {
       (window as any).fbq('track', 'InitiateCheckout', {
         content_name: 'РЕЦЕПТБУК EAT&FIT',
         content_category: 'Рецепти',
-        value: 1.00,
+        value: 12.00,
         currency: 'EUR'
       });
     }
