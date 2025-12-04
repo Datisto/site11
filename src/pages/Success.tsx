@@ -1,33 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
 
 export default function Success() {
-  const [isValidPurchase, setIsValidPurchase] = useState(false);
-
   useEffect(() => {
-    const pendingPayment = localStorage.getItem('pendingPayment');
-    const paymentTimestamp = localStorage.getItem('paymentTimestamp');
-
-    if (!pendingPayment || !paymentTimestamp) {
-      window.location.href = '/';
-      return;
-    }
-
-    const timestamp = parseInt(paymentTimestamp);
-    const now = Date.now();
-    const hourInMs = 60 * 60 * 1000;
-
-    if (now - timestamp > hourInMs) {
-      localStorage.removeItem('pendingPayment');
-      localStorage.removeItem('paymentTimestamp');
-      window.location.href = '/';
-      return;
-    }
-
     localStorage.removeItem('pendingPayment');
     localStorage.removeItem('paymentTimestamp');
-
-    setIsValidPurchase(true);
 
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Purchase', {
@@ -40,14 +17,6 @@ export default function Success() {
   const handleTelegramClick = () => {
     window.location.href = 'https://t.me/asyafitnessart_bot?start=ZGw6MzAwNTI2';
   };
-
-  if (!isValidPurchase) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center px-4">
