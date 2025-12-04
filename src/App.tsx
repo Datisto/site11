@@ -1,4 +1,4 @@
-import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import WhatInside from './components/WhatInside';
 import ForWhom from './components/ForWhom';
@@ -9,13 +9,7 @@ import FAQ from './components/FAQ';
 import FinalBlock from './components/FinalBlock';
 import Success from './pages/Success';
 
-function App() {
-  const isSuccessPage = window.location.pathname === '/success';
-
-  if (isSuccessPage) {
-    return <Success />;
-  }
-
+function HomePage() {
   return (
     <div className="min-h-screen">
       <Hero />
@@ -27,6 +21,15 @@ function App() {
       <FAQ />
       <FinalBlock />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/success" element={<Success />} />
+    </Routes>
   );
 }
 
