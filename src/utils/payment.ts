@@ -20,7 +20,7 @@ export const handlePayment = async () => {
     const paymentData = {
       orderReference,
       orderDate,
-      amount: 1,
+      amount: 12,
       currency: 'EUR',
       productName: ['РЕЦЕПТБУК EAT&FIT'],
       productPrice: [12],
