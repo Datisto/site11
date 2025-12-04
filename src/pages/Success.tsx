@@ -7,7 +7,7 @@ export default function Success() {
     localStorage.removeItem('paymentTimestamp');
 
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Purchase1', {
+      (window as any).fbq('track', 'Purchase', {
         value: 12.00,
         currency: 'EUR'
       });
