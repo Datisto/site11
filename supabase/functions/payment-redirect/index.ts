@@ -15,29 +15,68 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
+    const url = new URL(req.url);
+    console.log("Payment redirect called:", {
+      method: req.method,
+      url: url.toString(),
+      searchParams: Object.fromEntries(url.searchParams)
+    });
+
     const contentType = req.headers.get("content-type");
 
     if (contentType?.includes("application/x-www-form-urlencoded")) {
       const formData = await req.formData();
-      console.log("Payment callback received:", Object.fromEntries(formData));
+      console.log("Payment callback (form):", Object.fromEntries(formData));
     } else if (contentType?.includes("application/json")) {
       const data = await req.json();
-      console.log("Payment callback received:", data);
+      console.log("Payment callback (json):", data);
     }
 
-    return new Response(null, {
-      status: 302,
+    const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Redirecting...</title>
+          <script>
+            window.location.href = "https://asya-recipes.netlify.app/success";
+          </script>
+        </head>
+        <body>
+          <p>Redirecting to success page...</p>
+        </body>
+      </html>
+    `;
+
+    return new Response(html, {
+      status: 200,
       headers: {
-        "Location": "https://asya-recipes.netlify.app/success",
+        "Content-Type": "text/html; charset=utf-8",
       },
     });
   } catch (error) {
     console.error("Error processing redirect:", error);
 
-    return new Response(null, {
-      status: 302,
+    const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Redirecting...</title>
+          <script>
+            window.location.href = "https://asya-recipes.netlify.app/success";
+          </script>
+        </head>
+        <body>
+          <p>Redirecting to success page...</p>
+        </body>
+      </html>
+    `;
+
+    return new Response(html, {
+      status: 200,
       headers: {
-        "Location": "https://asya-recipes.netlify.app/success",
+        "Content-Type": "text/html; charset=utf-8",
       },
     });
   }
