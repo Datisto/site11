@@ -3,7 +3,7 @@ export const handlePayment = async () => {
   try {
     // Отслеживание события InitiateCheckout для Meta Pixel
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'InitiateCheckout', {
+      (window as any).fbq('track', 'Purchase', {
         content_name: 'РЕЦЕПТБУК EAT&FIT',
         content_category: 'Рецепти',
         value: 12.00,
