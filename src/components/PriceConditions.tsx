@@ -90,9 +90,9 @@ const PriceConditions = () => {
             </div>
 
             <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="text-3xl text-sage line-through font-montserrat">190 €</span>
-              <span className="text-5xl font-bold text-coral-500 font-montserrat">12 €</span>
-              <div className="bg-lime-400 text-white px-3 py-1 rounded-full font-bold font-montserrat">-94%</div>
+              <span className="text-3xl text-sage line-through font-montserrat">6125 грн</span>
+              <span className="text-5xl font-bold text-coral-500 font-montserrat">490 грн</span>
+              <div className="bg-lime-400 text-white px-3 py-1 rounded-full font-bold font-montserrat">-92%</div>
             </div>
 
             <div className="flex items-center justify-center gap-2 text-sage mb-6">

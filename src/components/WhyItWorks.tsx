@@ -64,16 +64,16 @@ const WhyItWorks = () => {
           
           <div className="inline-block bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 mb-4 relative max-w-md mx-auto">
             <div className="absolute -top-2 -right-2 lg:-top-3 lg:-right-3 bg-yellow-400 text-black rounded-full w-10 h-10 lg:w-14 lg:h-14 flex items-center justify-center font-bold text-xs lg:text-sm rotate-12 animate-bounce-subtle">
-              -94%
+              -92%
             </div>
-            
+
             <div className="text-xl lg:text-3xl font-bold text-white mb-2 font-montserrat">
-              <span className="line-through text-white/50 text-base lg:text-xl">190 €</span>
-              <div className="text-yellow-300 animate-pulse text-xl lg:text-3xl">12 €</div>
+              <span className="line-through text-white/50 text-base lg:text-xl">6125 грн</span>
+              <div className="text-yellow-300 animate-pulse text-xl lg:text-3xl">490 грн</div>
             </div>
             
             <p className="text-xs lg:text-sm text-white font-manrope">
-              {t.saveAmount[language].split('178 €')[0]}<span className="font-bold text-yellow-300">178 €</span>{t.saveAmount[language].split('178 €')[1]}
+              {t.saveAmount[language].split('5635 грн')[0]}<span className="font-bold text-yellow-300">5635 грн</span>{t.saveAmount[language].split('5635 грн')[1]}
             </p>
           </div>
         </div>

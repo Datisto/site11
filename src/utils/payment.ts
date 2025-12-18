@@ -6,8 +6,8 @@ export const handlePayment = async () => {
       (window as any).fbq('track', 'Purchase', {
         content_name: 'РЕЦЕПТБУК EAT&FIT',
         content_category: 'Рецепти',
-        value: 12.00,
-        currency: 'EUR'
+        value: 490.00,
+        currency: 'UAH'
       });
     }
 
@@ -20,10 +20,10 @@ export const handlePayment = async () => {
     const paymentData = {
       orderReference,
       orderDate,
-      amount: 12,
-      currency: 'EUR',
+      amount: 490,
+      currency: 'UAH',
       productName: ['РЕЦЕПТБУК EAT&FIT'],
-      productPrice: [12],
+      productPrice: [490],
       productCount: [1]
     };
 

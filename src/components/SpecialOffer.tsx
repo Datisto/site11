@@ -81,7 +81,7 @@ const SpecialOffer = () => {
                 <div className="bg-lime-50 rounded-2xl p-4 lg:p-6 mt-4 lg:mt-6">
                   <h3 className="text-lg lg:text-xl font-bold text-graphite mb-3 lg:mb-4 font-montserrat">{t.priceTitle[language]}</h3>
                   <ul className="space-y-1 lg:space-y-2 text-graphite text-sm lg:text-base">
-                    <li>• {t.priceItems[language][0].split('12 €')[0]}<strong className="text-lime-600">12 €</strong>{t.priceItems[language][0].split('12 €')[1]}</li>
+                    <li>• {t.priceItems[language][0].split('490 грн')[0]}<strong className="text-lime-600">490 грн</strong>{t.priceItems[language][0].split('490 грн')[1]}</li>
                     <li>• {t.priceItems[language][1]}</li>
                     <li>• {t.priceItems[language][2]}</li>
                   </ul>
