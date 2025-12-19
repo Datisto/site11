@@ -189,7 +189,7 @@ const Hero = () => {
                     <div className="mt-2 flex items-center gap-2">
                       <Clock className="w-4 h-4 text-orange-500" />
                       <span className="text-gray-600 text-sm font-manrope font-medium">
-                        {t.discountText[language]} <span className="text-orange-500 font-bold">{t.discountAmount[language]}</span>
+                        {t.discountText[language]}
                       </span>
                     </div>
                   </div>
