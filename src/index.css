@@ -95,11 +95,9 @@ body > div:last-child[style*="bottom"],
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(132, 204, 22, 0.5), 0 0 40px rgba(132, 204, 22, 0.3);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 30px rgba(132, 204, 22, 0.8), 0 0 60px rgba(132, 204, 22, 0.5);
     transform: scale(1.02);
   }
 }
