@@ -140,7 +140,7 @@ const Hero = () => {
               
               <div className="mb-4 lg:mb-6">
                 <div className="flex flex-row gap-1 mb-2">
-                  <span className="line-through text-lg lg:text-xl text-gray-500 font-montserrat">6125 грн</span>
+                  <span className="line-through text-lg lg:text-xl text-gray-500 font-montserrat">1225 грн</span>
                   <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600">490 грн</span>
                 </div>
                 <div className="text-gray-600 text-sm font-manrope">
