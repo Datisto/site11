@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Shield, CreditCard, Smartphone, Download, CheckCircle, Star, Users } from 'lucide-react';
+import { ArrowRight, Shield, CreditCard, Smartphone, Download, CheckCircle, Star, Users, Flame } from 'lucide-react';
 import { handlePayment } from '../utils/payment';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
@@ -74,6 +74,13 @@ const FinalBlock = () => {
 
         {/* Финальная CTA кнопка */}
         <div className="text-center mb-8">
+          <div className="mb-4 flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 max-w-xs mx-auto">
+            <Flame className="w-5 h-5 text-yellow-300 animate-pulse" />
+            <span className="text-sm text-white font-semibold font-manrope">
+              {t.purchaseCounter[language]} <span className="text-yellow-300 font-bold text-lg">77</span> {t.purchaseAccess[language]}
+            </span>
+          </div>
+
           <button
             onClick={handlePayment}
             className="group bg-white text-green-700 px-12 py-6 rounded-full font-bold text-2xl hover:bg-yellow-300 hover:text-green-800 transition-all duration-300 hover:scale-110 hover:shadow-2xl font-montserrat flex items-center justify-center gap-3 mx-auto animate-pulse-gentle button-pulse-glow"

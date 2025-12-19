@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, Users } from 'lucide-react';
 import { handlePayment } from '../utils/payment';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
@@ -193,6 +193,13 @@ const Hero = () => {
               >
                 {t.buyButton[language]}
               </button>
+
+              <div className="mt-4 flex items-center justify-center gap-2 bg-lime-100 rounded-full px-4 py-2">
+                <Users className="w-4 h-4 text-lime-600 animate-pulse" />
+                <span className="text-sm text-graphite-800 font-semibold font-manrope">
+                  {t.purchaseCounter[language]} <span className="text-lime-600 font-bold">77</span> {t.purchaseAccess[language]}
+                </span>
+              </div>
             </div>
           </div>
 

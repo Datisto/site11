@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Star, Flame, ArrowRight, Gift } from 'lucide-react';
+import { Clock, Star, Flame, ArrowRight, Gift, Users } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { handlePayment } from '../utils/payment';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -85,7 +85,7 @@ const WhyItWorks = () => {
               <Clock className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-300 animate-pulse" />
               <span className="text-white font-semibold text-xs lg:text-sm font-montserrat">{t.timerLabel[language]}</span>
             </div>
-            
+
             <div className="grid grid-cols-4 gap-1 lg:gap-2 text-white">
               <div className="bg-white/30 rounded-lg p-1 lg:p-2 text-center">
                 <div className="text-lg lg:text-xl font-bold animate-pulse font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
@@ -104,6 +104,13 @@ const WhyItWorks = () => {
                 <div className="text-xs font-manrope">{t.timer.seconds[language]}</div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-4 flex items-center justify-center gap-2 bg-white/25 backdrop-blur-sm rounded-full px-4 py-2">
+            <Users className="w-4 h-4 text-yellow-300 animate-pulse" />
+            <span className="text-sm text-white font-semibold font-manrope">
+              {t.purchaseCounter[language]} <span className="text-yellow-300 font-bold">77</span> {t.purchaseAccess[language]}
+            </span>
           </div>
         </div>
 

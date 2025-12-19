@@ -53,6 +53,14 @@ export const translations = {
     author: {
       ru: 'Автор: Asya',
       ua: 'Автор: Asya'
+    },
+    purchaseCounter: {
+      ru: 'Сегодня купили:',
+      ua: 'Сьогодні купили:'
+    },
+    purchaseAccess: {
+      ru: 'доступов',
+      ua: 'доступів'
     }
   },
   whatInside: {
@@ -485,6 +493,14 @@ export const translations = {
     guarantee: {
       ru: '✓ Безопасная оплата • ✓ Мгновенный доступ • ✓ Гарантия возврата',
       ua: '✓ Безпечна оплата • ✓ Миттєвий доступ • ✓ Гарантія повернення'
+    },
+    purchaseCounter: {
+      ru: 'Сегодня купили:',
+      ua: 'Сьогодні купили:'
+    },
+    purchaseAccess: {
+      ru: 'доступов',
+      ua: 'доступів'
     }
   },
   reviews: {
@@ -603,6 +619,14 @@ export const translations = {
     guarantees: {
       ru: '✓ Мгновенный доступ после оплаты • ✓ Пожизненный доступ • ✓ Техническая поддержка',
       ua: '✓ Миттєвий доступ після оплати • ✓ Довічний доступ • ✓ Технічна підтримка'
+    },
+    purchaseCounter: {
+      ru: 'Сегодня купили:',
+      ua: 'Сьогодні купили:'
+    },
+    purchaseAccess: {
+      ru: 'доступов',
+      ua: 'доступів'
     },
     footer: {
       copyright: {
