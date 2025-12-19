@@ -126,7 +126,7 @@ body > div:last-child[style*="bottom"],
 }
 
 .button-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 0.8s ease-in-out infinite;
 }
 
 .price-animate {

@@ -226,7 +226,7 @@ const WhatInside = () => {
         <div ref={ctaRef} className="text-center animate-on-scroll">
           <button
             onClick={handlePayment}
-            className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 lg:px-12 py-3 lg:py-4 rounded-full font-bold text-lg lg:text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat relative overflow-hidden animate-pulse-gentle before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12 shadow-lg"
+            className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 lg:px-12 py-3 lg:py-4 rounded-full font-bold text-lg lg:text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12 shadow-lg button-pulse-glow"
           >
             <span className="relative z-10">{t.button[language]}</span>
           </button>
