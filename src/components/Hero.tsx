@@ -15,6 +15,8 @@ const Hero = () => {
     seconds: 0
   });
 
+  const [showPromo, setShowPromo] = useState(false);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -33,6 +35,14 @@ const Hero = () => {
     }, 1000);
 
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const promoTimer = setInterval(() => {
+      setShowPromo(prev => !prev);
+    }, 2000);
+
+    return () => clearInterval(promoTimer);
   }, []);
 
   return (
@@ -141,7 +151,9 @@ const Hero = () => {
               <div className="mb-4 lg:mb-6">
                 <div className="flex flex-row gap-1 mb-2">
                   <span className="line-through text-lg lg:text-xl text-gray-500 font-montserrat">1225 грн</span>
-                  <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600 price-animate">490 грн</span>
+                  <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600 price-animate">
+                    {showPromo ? (language === 'ua' ? 'АКЦІЯ' : 'АКЦИЯ') : '490 грн'}
+                  </span>
                 </div>
                 <div className="text-gray-600 text-sm font-manrope">
                   {t.discountText[language]} <span className="text-lime-600 font-bold">{t.discountAmount[language]}</span>
