@@ -148,102 +148,132 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Special Offer Card */}
+            {/* Special Offer Card - Ticket Shape */}
             <div className="relative max-w-lg">
-              <div className="absolute -inset-1 bg-gradient-to-r from-lime-400 via-green-400 to-emerald-500 rounded-3xl blur-lg opacity-75 animate-pulse"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-lime-400 via-green-400 to-emerald-500 opacity-60 blur-xl animate-pulse ticket-glow"></div>
 
-              <div className="relative bg-gradient-to-br from-white via-lime-50 to-green-50 rounded-3xl p-6 lg:p-8 shadow-2xl border-2 border-lime-300 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-lime-400/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-green-400/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+              <div className="relative">
+                <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="ticketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#f0fdf4" />
+                      <stop offset="50%" stopColor="#ecfccb" />
+                      <stop offset="100%" stopColor="#dcfce7" />
+                    </linearGradient>
+                    <filter id="ticketShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#84cc16" floodOpacity="0.3"/>
+                    </filter>
+                  </defs>
+                </svg>
 
-                <div className="absolute top-3 right-3">
-                  <Sparkles className="w-6 h-6 text-lime-500 animate-pulse" />
-                </div>
+                <div className="relative bg-gradient-to-br from-green-50 via-lime-50 to-white p-6 lg:p-8 shadow-2xl ticket-shape">
+                  <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-inner border-2 border-lime-200"></div>
+                  <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-inner border-2 border-lime-200"></div>
 
-                <div className="relative">
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-lime-500 to-green-500 text-white px-4 py-2 rounded-full mb-4 shadow-lg">
-                    <Zap className="w-4 h-4 animate-pulse" />
-                    <span className="font-bold text-sm font-montserrat tracking-wide">{t.specialOffer[language]}</span>
+                  <div className="absolute left-6 top-1/2 -translate-y-1/2 border-l-2 border-dashed border-lime-300 h-[85%]"></div>
+
+                  <div className="absolute top-4 right-4 flex gap-1">
+                    <Sparkles className="w-5 h-5 text-lime-500 animate-pulse" />
+                    <Sparkles className="w-4 h-4 text-green-400 animate-pulse delay-100" />
                   </div>
 
-                  <div className="mb-5 lg:mb-6">
-                    <div className="flex items-baseline gap-3 mb-2">
+                  <div className="pl-6 lg:pl-8">
+                    <div className="flex items-center gap-3 mb-4">
                       <div className="relative">
-                        <span className="text-lg lg:text-xl text-gray-400 font-montserrat">1225 грн</span>
-                        <div className="absolute inset-0 flex items-center">
-                          <div className="w-full h-0.5 bg-red-500 rotate-[-8deg]"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-green-400 rounded-lg blur opacity-50"></div>
+                        <div className="relative bg-gradient-to-r from-lime-500 to-green-500 text-white p-2 rounded-lg">
+                          <Zap className="w-5 h-5" />
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <TrendingDown className="w-5 h-5 text-red-500" />
-                        <span className="text-red-500 font-bold text-sm">-60%</span>
+                      <div>
+                        <span className="font-bold text-sm font-montserrat tracking-wide text-lime-700 uppercase">{t.specialOffer[language]}</span>
+                        <div className="flex items-center gap-1 mt-0.5">
+                          <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                          <span className="text-xs text-red-500 font-semibold">{language === 'ua' ? 'Обмежена пропозиція' : 'Ограниченное предложение'}</span>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-bold text-4xl lg:text-5xl font-montserrat bg-gradient-to-r from-lime-600 to-green-600 bg-clip-text text-transparent price-animate">
-                        {showPromo ? (language === 'ua' ? 'АКЦІЯ' : 'АКЦИЯ') : '490 грн'}
+                    <div className="mb-5 lg:mb-6">
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className="relative inline-block">
+                          <span className="text-xl lg:text-2xl text-gray-400 font-montserrat font-medium">1225 грн</span>
+                          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 20">
+                            <line x1="0" y1="12" x2="100" y2="8" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                        <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg">
+                          <TrendingDown className="w-4 h-4" />
+                          -60%
+                        </div>
+                      </div>
+
+                      <div className="flex items-end gap-2">
+                        <span className="font-black text-5xl lg:text-6xl font-montserrat bg-gradient-to-br from-lime-600 via-green-500 to-emerald-600 bg-clip-text text-transparent price-animate drop-shadow-sm">
+                          {showPromo ? (language === 'ua' ? 'АКЦІЯ' : 'АКЦИЯ') : '490 грн'}
+                        </span>
+                      </div>
+
+                      <div className="mt-3 inline-flex items-center gap-2 bg-orange-100 px-3 py-1.5 rounded-full">
+                        <Clock className="w-4 h-4 text-orange-600" />
+                        <span className="text-orange-700 text-sm font-manrope font-semibold">
+                          {t.discountText[language]}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2 lg:gap-3 mb-5 lg:mb-6">
+                      <div className="flex-1 group">
+                        <div className="relative bg-white rounded-xl p-3 text-center border-2 border-lime-200 shadow-md hover:shadow-lg hover:border-lime-400 transition-all hover:-translate-y-1">
+                          <div className="text-3xl lg:text-4xl font-black text-graphite-800 font-montserrat tabular-nums">{String(timeLeft.days).padStart(2, '0')}</div>
+                          <div className="text-[10px] text-gray-500 font-manrope uppercase tracking-widest mt-1">{t.timer.days[language]}</div>
+                        </div>
+                      </div>
+                      <div className="flex-1 group">
+                        <div className="relative bg-white rounded-xl p-3 text-center border-2 border-lime-200 shadow-md hover:shadow-lg hover:border-lime-400 transition-all hover:-translate-y-1">
+                          <div className="text-3xl lg:text-4xl font-black text-graphite-800 font-montserrat tabular-nums">{String(timeLeft.hours).padStart(2, '0')}</div>
+                          <div className="text-[10px] text-gray-500 font-manrope uppercase tracking-widest mt-1">{t.timer.hours[language]}</div>
+                        </div>
+                      </div>
+                      <div className="flex-1 group">
+                        <div className="relative bg-gradient-to-b from-orange-50 to-orange-100 rounded-xl p-3 text-center border-2 border-orange-300 shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+                          <div className="text-3xl lg:text-4xl font-black text-orange-500 font-montserrat tabular-nums animate-pulse">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                          <div className="text-[10px] text-orange-600 font-manrope uppercase tracking-widest mt-1">{t.timer.minutes[language]}</div>
+                        </div>
+                      </div>
+                      <div className="flex-1 group">
+                        <div className="relative bg-gradient-to-b from-red-50 to-red-100 rounded-xl p-3 text-center border-2 border-red-300 shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+                          <div className="text-3xl lg:text-4xl font-black text-red-500 font-montserrat tabular-nums">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                          <div className="text-[10px] text-red-600 font-manrope uppercase tracking-widest mt-1">{t.timer.seconds[language]}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={handlePayment}
+                      className="relative w-full group"
+                    >
+                      <div className="absolute -inset-1 bg-gradient-to-r from-lime-400 via-green-400 to-lime-400 rounded-2xl blur opacity-70 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="relative bg-gradient-to-r from-lime-500 via-green-500 to-lime-500 hover:from-lime-600 hover:via-green-600 hover:to-lime-600 text-white py-4 lg:py-5 rounded-2xl font-bold text-lg lg:text-xl transition-all duration-300 font-montserrat shadow-xl flex items-center justify-center gap-3 group-hover:scale-[1.02]">
+                        <span>{t.buyButton[language]}</span>
+                        <div className="bg-white/20 p-1.5 rounded-lg">
+                          <Zap className="w-5 h-5" />
+                        </div>
+                      </div>
+                    </button>
+
+                    <div className="mt-4 flex items-center justify-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2.5 border border-lime-200 shadow-sm">
+                      <div className="relative flex items-center justify-center">
+                        <Users className="w-4 h-4 text-lime-600" />
+                        <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                      </div>
+                      <span className="text-sm text-graphite-700 font-semibold font-manrope">
+                        {t.purchaseCounter[language]} <span className="text-lime-600 font-bold text-base">77</span> {t.purchaseAccess[language]}
                       </span>
                     </div>
-
-                    <div className="mt-2 flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-orange-500" />
-                      <span className="text-gray-600 text-sm font-manrope font-medium">
-                        {t.discountText[language]}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-4 gap-2 lg:gap-3 mb-5 lg:mb-6">
-                    <div className="group relative">
-                      <div className="absolute inset-0 bg-lime-400 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                      <div className="relative bg-white rounded-2xl p-2 lg:p-3 text-center border-2 border-lime-200 shadow-lg hover:border-lime-400 transition-colors">
-                        <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-b from-graphite-800 to-graphite-600 bg-clip-text text-transparent font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
-                        <div className="text-xs text-gray-500 font-manrope uppercase tracking-wider">{t.timer.days[language]}</div>
-                      </div>
-                    </div>
-                    <div className="group relative">
-                      <div className="absolute inset-0 bg-lime-400 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                      <div className="relative bg-white rounded-2xl p-2 lg:p-3 text-center border-2 border-lime-200 shadow-lg hover:border-lime-400 transition-colors">
-                        <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-b from-graphite-800 to-graphite-600 bg-clip-text text-transparent font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
-                        <div className="text-xs text-gray-500 font-manrope uppercase tracking-wider">{t.timer.hours[language]}</div>
-                      </div>
-                    </div>
-                    <div className="group relative">
-                      <div className="absolute inset-0 bg-orange-400 rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                      <div className="relative bg-white rounded-2xl p-2 lg:p-3 text-center border-2 border-orange-200 shadow-lg hover:border-orange-400 transition-colors">
-                        <div className="text-2xl lg:text-3xl font-bold text-orange-500 font-montserrat animate-pulse">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                        <div className="text-xs text-gray-500 font-manrope uppercase tracking-wider">{t.timer.minutes[language]}</div>
-                      </div>
-                    </div>
-                    <div className="group relative">
-                      <div className="absolute inset-0 bg-red-400 rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                      <div className="relative bg-white rounded-2xl p-2 lg:p-3 text-center border-2 border-red-200 shadow-lg hover:border-red-400 transition-colors">
-                        <div className="text-2xl lg:text-3xl font-bold text-red-500 font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                        <div className="text-xs text-gray-500 font-manrope uppercase tracking-wider">{t.timer.seconds[language]}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={handlePayment}
-                    className="relative w-full group overflow-hidden rounded-full"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-lime-400 via-green-400 to-lime-400 bg-[length:200%_100%] animate-gradient-x"></div>
-                    <div className="relative bg-gradient-to-r from-lime-500 to-green-500 hover:from-lime-600 hover:to-green-600 text-white py-4 lg:py-5 font-bold text-base lg:text-lg transition-all duration-300 font-montserrat shadow-xl flex items-center justify-center gap-2">
-                      <span>{t.buyButton[language]}</span>
-                      <Zap className="w-5 h-5 group-hover:animate-bounce" />
-                    </div>
-                  </button>
-
-                  <div className="mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-lime-100 to-green-100 rounded-full px-4 py-2.5 border border-lime-200">
-                    <div className="relative">
-                      <Users className="w-4 h-4 text-lime-600" />
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
-                    </div>
-                    <span className="text-sm text-graphite-700 font-semibold font-manrope">
-                      {t.purchaseCounter[language]} <span className="text-lime-600 font-bold text-base">77</span> {t.purchaseAccess[language]}
-                    </span>
                   </div>
                 </div>
               </div>

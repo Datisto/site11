@@ -148,3 +148,39 @@ body > div:last-child[style*="bottom"],
 .animate-gradient-x {
   animation: gradient-x 3s ease infinite;
 }
+
+.ticket-shape {
+  border-radius: 24px;
+  position: relative;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfccb 50%, #ffffff 100%);
+  border: 2px solid #bef264;
+}
+
+.ticket-shape::before,
+.ticket-shape::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.ticket-glow {
+  animation: ticket-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ticket-glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
