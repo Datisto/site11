@@ -15,8 +15,6 @@ const Hero = () => {
     seconds: 0
   });
 
-  const [showPromo, setShowPromo] = useState(false);
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -35,21 +33,6 @@ const Hero = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const switchText = () => {
-      setTimeout(() => {
-        setShowPromo(prev => !prev);
-      }, 600);
-    };
-
-    switchText();
-    const promoTimer = setInterval(() => {
-      switchText();
-    }, 3000);
-
-    return () => clearInterval(promoTimer);
   }, []);
 
   return (
@@ -209,8 +192,8 @@ const Hero = () => {
                       </div>
 
                       <div className="flex items-end gap-2">
-                        <span className="font-black text-5xl lg:text-6xl font-montserrat bg-gradient-to-br from-lime-600 via-green-500 to-emerald-600 bg-clip-text text-transparent price-animate drop-shadow-sm">
-                          {showPromo ? (language === 'ua' ? 'АКЦІЯ' : 'АКЦИЯ') : '490 грн'}
+                        <span className="font-black text-5xl lg:text-6xl font-montserrat bg-gradient-to-br from-lime-600 via-green-500 to-emerald-600 bg-clip-text text-transparent drop-shadow-sm">
+                          490 грн
                         </span>
                       </div>
 
