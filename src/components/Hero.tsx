@@ -38,9 +38,16 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
+    const switchText = () => {
+      setTimeout(() => {
+        setShowPromo(prev => !prev);
+      }, 600);
+    };
+
+    switchText();
     const promoTimer = setInterval(() => {
-      setShowPromo(prev => !prev);
-    }, 2000);
+      switchText();
+    }, 3000);
 
     return () => clearInterval(promoTimer);
   }, []);
