@@ -91,7 +91,7 @@ const PriceConditions = () => {
 
             <div className="flex items-center justify-center gap-4 mb-6">
               <span className="text-3xl text-sage line-through font-montserrat">1225 грн</span>
-              <span className="text-5xl font-bold text-coral-500 font-montserrat">490 грн</span>
+              <span className="text-5xl font-bold text-coral-500 font-montserrat price-animate">490 грн</span>
               <div className="bg-lime-400 text-white px-3 py-1 rounded-full font-bold font-montserrat">-60%</div>
             </div>
 
@@ -101,7 +101,7 @@ const PriceConditions = () => {
             </div>
           </div>
 
-          <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl mb-6 font-montserrat flex items-center justify-center gap-2">
+          <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl mb-6 font-montserrat flex items-center justify-center gap-2 button-pulse-glow">
             <Download className="w-6 h-6" />
             КУПИТЬ ДОСТУП И СКАЧАТЬ
           </button>

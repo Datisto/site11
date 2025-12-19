@@ -66,7 +66,7 @@ const FinalBlock = () => {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto mb-6">
             <div className="flex flex-col items-center gap-2 mb-4">
               <span className="line-through text-gray-500 text-4xl lg:text-5xl font-bold font-montserrat">1225 грн</span>
-              <span className="text-yellow-300 text-5xl lg:text-6xl font-bold font-montserrat">490 грн</span>
+              <span className="text-yellow-300 text-5xl lg:text-6xl font-bold font-montserrat price-animate">490 грн</span>
             </div>
             <p className="text-yellow-300 text-xl font-semibold font-montserrat">{t.savings[language]}</p>
           </div>
@@ -74,9 +74,9 @@ const FinalBlock = () => {
 
         {/* Финальная CTA кнопка */}
         <div className="text-center mb-8">
-          <button 
+          <button
             onClick={handlePayment}
-            className="group bg-white text-green-700 px-12 py-6 rounded-full font-bold text-2xl hover:bg-yellow-300 hover:text-green-800 transition-all duration-300 hover:scale-110 hover:shadow-2xl font-montserrat flex items-center justify-center gap-3 mx-auto animate-pulse-gentle"
+            className="group bg-white text-green-700 px-12 py-6 rounded-full font-bold text-2xl hover:bg-yellow-300 hover:text-green-800 transition-all duration-300 hover:scale-110 hover:shadow-2xl font-montserrat flex items-center justify-center gap-3 mx-auto animate-pulse-gentle button-pulse-glow"
           >
             <Download className="w-6 h-6" />
             {t.button[language]}

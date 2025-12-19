@@ -141,7 +141,7 @@ const Hero = () => {
               <div className="mb-4 lg:mb-6">
                 <div className="flex flex-row gap-1 mb-2">
                   <span className="line-through text-lg lg:text-xl text-gray-500 font-montserrat">1225 грн</span>
-                  <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600">490 грн</span>
+                  <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600 price-animate">490 грн</span>
                 </div>
                 <div className="text-gray-600 text-sm font-manrope">
                   {t.discountText[language]} <span className="text-lime-600 font-bold">{t.discountAmount[language]}</span>
@@ -170,7 +170,7 @@ const Hero = () => {
               
               <button
                 onClick={handlePayment}
-                className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg transition-all duration-300 hover:scale-105 font-montserrat shadow-lg"
+                className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg transition-all duration-300 hover:scale-105 font-montserrat shadow-lg button-pulse-glow"
               >
                 {t.buyButton[language]}
               </button>

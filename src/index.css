@@ -92,3 +92,48 @@ body > div:last-child[style*="bottom"],
     transform: translateX(200%) skewX(-12deg);
   }
 }
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(132, 204, 22, 0.5), 0 0 40px rgba(132, 204, 22, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(132, 204, 22, 0.8), 0 0 60px rgba(132, 204, 22, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes price-transform {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(90deg);
+  }
+  21% {
+    opacity: 0;
+    transform: scale(1.2) rotateX(-90deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+.button-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.price-animate {
+  animation: price-transform 3s ease-in-out infinite;
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
